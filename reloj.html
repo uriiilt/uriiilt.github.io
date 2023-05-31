@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relojes Digitales</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+        }
+        
+        #clock-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .clock {
+            margin: 0 10px;
+        }
+    </style>
+    <script>
+        function updateClocks() {
+            var newYorkTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+            var madridTime = new Date().toLocaleString("es-ES", {timeZone: "Europe/Madrid"});
+            
+            document.getElementById("new-york-clock").textContent = newYorkTime;
+            document.getElementById("madrid-clock").textContent = madridTime;
+        }
+        
+        setInterval(updateClocks, 1000);
+    </script>
+</head>
+<body>
+    <h1>Relojes Digitales</h1>
+    <div id="clock-container">
+        <div class="clock">
+            <h2>Nueva York</h2>
+            <p id="new-york-clock"></p>
+        </div>
+        <div class="clock">
+            <h2>Madrid</h2>
+            <p id="madrid-clock"></p>
+        </div>
+    </div>
+</body>
+</html>
